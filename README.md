@@ -53,7 +53,7 @@ def webhook():
         link2 = '[Answer on TON Overflow](' + url + ')'
         
         n = 1 # number of groups
-        arr = ['-808220482'] # array of IDs of all groups
+        arr = ['-800000000'] # array of IDs of all groups
         for i in range(n):
             requests.get('https://api.telegram.org/bot{}/sendMessage'.format(token), params=dict(
                 chat_id = arr[i],
