@@ -30,7 +30,7 @@ The app works with a webhooks.
 * Processes it
 * Sends it to Telegram
 
-Therefore, with the flask we create an app
+Therefore, with the flask we create a server
 ```bash
 app = Flask(__name__)
 ```
