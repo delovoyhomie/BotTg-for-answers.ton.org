@@ -69,7 +69,7 @@ Next, we get the components we need from the json file and use requests to send 
 
 ## ⚙️Configuring a webhooks 
 
-When you start the project, you will see a private and public ip. You need to choose public (second).
+When you start the project, you will see a private (localhost) and public ip. You need to choose public (second).
 
 ![image](/img/ip.png)
 
