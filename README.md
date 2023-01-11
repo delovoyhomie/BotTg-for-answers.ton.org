@@ -65,4 +65,16 @@ def webhook():
         return 'BAD!'
 ```
 
-Next, we get the components we need from the json file and use requests to send a message to the chats
+Next, we get the components we need from the json file and use requests to send a message to the chats.
+
+## ⚙️Configuring a webhooks 
+
+When you start the project, you will see a private and public ip. You need to choose public (second).
+
+![image](/img/ip.png)
+
+1) Copy the ip and go to https://answers.ton.org/admin to set the webhook.
+
+2) Also you have to select the event trigger `question.create`.
+
+## 🚀 Start the project and that's it
