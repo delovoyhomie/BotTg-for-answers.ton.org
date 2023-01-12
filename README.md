@@ -67,14 +67,26 @@ def webhook():
 
 Next, we get the components we need from the json file and use requests to send a message to the chats.
 
+## Setting up mailing lists
+
+```bash
+n = 1 # number of groups
+arr = ['-800000000'] # array of IDs of all groups
+```
+You enter the group IDs into the array and the variable n indicates the number of the first groups in the array that will be involved in the mailing list
+
 ## ⚙️Configuring a webhooks 
 
 When you start the project, you will see a private (localhost) and public ip. You need to choose public (second).
 
 ![image](/img/ip.png)
 
-1) Copy the ip and go to https://answers.ton.org/admin to set the webhook.
+1) Copy the ip and go to https://answers.ton.org/admin to set the webhook. Example: http://127.0.0.1:5000/webhook
 
 2) Also you have to select the event trigger `question.create`.
 
-## 🚀 Start the project and that's it
+## 🚀 Start the server and that's it
+
+```bash
+app.run(host='0.0.0.0', port=5000)
+```
