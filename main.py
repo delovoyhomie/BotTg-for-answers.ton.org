@@ -33,4 +33,4 @@ def webhook():
     else:
         return 'BAD!'
 
-app.run(host='0.0.0.0', port=5000) # port can changed
+app.run(host='0.0.0.0', port=5000) # port can be changed
