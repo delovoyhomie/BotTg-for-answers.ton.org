@@ -67,7 +67,7 @@ def webhook():
 
 Next, we get the components we need from the json file and use requests to send a message to the chats.
 
-## Setting up mailing lists
+## 📨Setting up mailing lists
 
 ```bash
 n = 1 # number of groups
