@@ -4,7 +4,7 @@ import json
 
 token = 'YOUR-TOKEN'
 
-app = Flask(__name__)
+app = Flask(name)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -21,14 +21,59 @@ def webhook():
         link1 = '[' + name + '](' + url + ')'
         link2 = '[Answer on TON Overflow](' + url + ')'
         
-        n = 1 # number of groups
-        arr = ['-000000000'] # array of IDs of all groups 
-        for i in range(n):
-            requests.get('https://api.telegram.org/bot{}/sendMessage'.format(token), params=dict(
-                chat_id = arr[i],
-                text = '🔔 ' + link1 + '\n' + '*from *' + '*' + user + '*' + '\n\n' + body  + '\n\n' + '🔗 ' + link2,
+
+        flag = True
+        body_count = body.count('*')
+        if body_count % 2 != 0:
+            body_count -= 1
+
+        for i in range(body_count):
+            if flag:
+                body = body.replace('*', '_', 1)
+                flag = False
+            else:
+                body = body.replace('*', '_', 1)
+                flag = True
+        print(body)
+
+        flag = True
+        body_count = body.count('')
+        if body_count % 2 != 0:
+            body_count -= 1
+
+        for i in range(body_count):
+            if flag:
+                body = body.replace('', '*', 1)
+                flag = False
+            else:
+                body = body.replace('**', '*', 1)
+                flag = True
+        print(body)
+
+        flag = True
+        body_count = body.count('')
+        if body_count % 2 != 0:
+            body_count -= 1
+
+        for i in range(body_count):
+            if flag:
+                body = body.replace('', '*', 1)
+                flag = False
+            else:
+                body = body.replace('__', '*', 1)
+                flag = True
+        print(body)
+
+        n = 2 # number of groups
+        # first - test; second - ton dev chat
+        arr = ['-1001884593590', '-1001516541544'] # array of IDs of all groups 
+        for chat_id in arr:
+            response = requests.get('https://api.telegram.org/bot{}/sendMessage'.format(token), params=dict(
+                chat_id = chat_id,
+                text = link1 + '\n' + '*from *' + '*' + user + '*' + '\n\n' + body  + '\n\n' + '🔗 ' + link2,
                 parse_mode= 'markdown'
             )) 
+            print(response.text)
         return 'GOOD!'
     else:
         return 'BAD!'
