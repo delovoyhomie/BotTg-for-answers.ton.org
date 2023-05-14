@@ -1,4 +1,8 @@
-# BotTg-for-answers.ton.org
+# Telegram Bot for the TON Developer Community
+
+Developed for footsteps [#116](https://github.com/ton-society/ton-footsteps/issues/116) from TON Footsteps.
+
+### This project aims to create a Telegram Bot to share every new post from the TON Overflow to the developer community chats (TonDev Chats RU, EN, CN).
 
 ## ✍️ What you need to get started
 Install [Python](https://www.python.org/) if you haven't yet.
