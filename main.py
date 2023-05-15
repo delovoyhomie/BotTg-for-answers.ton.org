@@ -4,7 +4,7 @@ import json
 
 token = 'YOUR-TOKEN'
 
-app = Flask(name)
+app = Flask(__name__)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
